@@ -1,5 +1,5 @@
 {
-  "name": "@ngdem/ngdem-backend-core",
+  "name": "@yerkinnn/test-package-1",
   "version": "1.0.0",
   "description": "NestJS services package for ngdem organization",
   "main": "dist/index.js",
@@ -21,7 +21,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ngdem/ngdem-backend-core.git"
+    "url": "https://github.com/yerkinnn/test-package-1.git"
   },
   "peerDependencies": {
     "@nestjs/common": "^10.0.0",

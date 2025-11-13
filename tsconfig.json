@@ -3,23 +3,25 @@
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "es2020",
     "sourceMap": true,
+    "declarationMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "esModuleInterop": true
+    "paths": {
+      "modules/*": ["./src/modules/*"],
+      "shared/*": ["./src/shared/*"],
+      "@/*": ["./*"]
+    },
+    "incremental": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
-

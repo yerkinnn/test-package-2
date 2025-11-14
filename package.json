@@ -1,6 +1,6 @@
 {
   "name": "@yerkinnn/test-package-2",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1",
   "description": "NestJS services package for ngdem organization",
   "exports": {
     "./client": {

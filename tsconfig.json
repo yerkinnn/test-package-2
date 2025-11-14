@@ -1,26 +1,53 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2020",
-    "sourceMap": true,
+    // "module": "commonjs",
+    // "target": "es2020",
+    // "sourceMap": true,
+    // "declaration": true,
+    // "declarationMap": true,
+    // "outDir": "./dist",
+    // "baseUrl": "./",
+    // "removeComments": true,
+    // "noImplicitAny": true,
+    // "strict": true,
+    // "emitDecoratorMetadata": true,
+    // "experimentalDecorators": true,
+    // "esModuleInterop": true,
+    // "skipLibCheck": true,
+    // "resolveJsonModule": true,
+    // "incremental": true,
+    // "paths": {
+    //   "modules/*": ["./src/modules/*"],
+    //   "shared/*": ["./src/shared/*"],
+    //   "@/*": ["./*"]
+    // }
+
+
+    // IMPORTANT: produce clean JS + types for consumers
+    "target": "ES2020",
+    "module": "CommonJS",              // NestJS libraries use CJS for compatibility
     "declaration": true,
-    "declarationMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "removeComments": true,
-    "noImplicitAny": true,
-    "strict": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "outDir": "dist",
+
+    // For multi-entry library (client/admin/shared/user)
+    "rootDir": "src",
+
+    // Module resolution
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "incremental": true,
-    "paths": {
-      "modules/*": ["./src/modules/*"],
-      "shared/*": ["./src/shared/*"],
-      "@/*": ["./*"]
-    }
+
+    // Needed for NestJS decorators
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "isolatedModules": false,
+
+    "types": ["node", "validator"],   // <-- REQUIRED!!
+    "skipLibCheck": true              // <-- Strongly recommended for libs
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

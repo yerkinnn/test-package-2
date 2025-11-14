@@ -1,26 +1,26 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "target": "es2020",
+    "sourceMap": true,
     "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
     "removeComments": true,
-    "resolveJsonModule": true,
     "noImplicitAny": true,
     "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es2020",
-    "sourceMap": true,
-    "declarationMap": true,
-    "skipLibCheck": true,
     "esModuleInterop": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "incremental": true,
     "paths": {
       "modules/*": ["./src/modules/*"],
       "shared/*": ["./src/shared/*"],
       "@/*": ["./*"]
-    },
-    "incremental": true
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

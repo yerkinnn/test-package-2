@@ -1,12 +1,13 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable } from '@nestjs/common';
+require('dotenv').config();
 
 @Injectable()
 export class TestUserUseCase {
   execute(): { message: string; timestamp: Date } {
-    console.log("TestUserUseCase executed");
+    console.log('TestUserUseCase executed');
 
     return {
-      message: "TestUserUseCase executed",
+      message: 'TestUserUseCase executed',
       timestamp: new Date(),
     };
   }

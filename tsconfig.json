@@ -1,53 +1,38 @@
 {
   "compilerOptions": {
-    // "module": "commonjs",
-    // "target": "es2020",
-    // "sourceMap": true,
-    // "declaration": true,
-    // "declarationMap": true,
-    // "outDir": "./dist",
+    // IMPORTANT: produce clean JS + types for consumers
+    "target": "ES2020",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+
     // "baseUrl": "./",
     // "removeComments": true,
-    // "noImplicitAny": true,
-    // "strict": true,
-    // "emitDecoratorMetadata": true,
-    // "experimentalDecorators": true,
-    // "esModuleInterop": true,
-    // "skipLibCheck": true,
-    // "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "strict": true,
+
+    // Needed for NestJS decorators
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    // Module resolution
+    // "moduleResolution": "node16",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+
+    "skipLibCheck": true,
+
+    "rootDir": "src"
+
     // "incremental": true,
     // "paths": {
     //   "modules/*": ["./src/modules/*"],
     //   "shared/*": ["./src/shared/*"],
     //   "@/*": ["./*"]
     // }
-
-
-    // IMPORTANT: produce clean JS + types for consumers
-    "target": "ES2020",
-    "module": "CommonJS",              // NestJS libraries use CJS for compatibility
-    "declaration": true,
-    "declarationMap": false,
-    "emitDeclarationOnly": false,
-    "outDir": "dist",
-
-    // For multi-entry library (client/admin/shared/user)
-    "rootDir": "src",
-
-    // Module resolution
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-
-    // Needed for NestJS decorators
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-
-    "isolatedModules": false,
-
-    "types": ["node", "validator"],   // <-- REQUIRED!!
-    "skipLibCheck": true              // <-- Strongly recommended for libs
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

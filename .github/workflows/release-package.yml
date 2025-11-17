@@ -5,39 +5,38 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Enable Corepack
-        run: corepack enable
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Build
-        run: yarn build
-
-  publish-gpr:
-    needs: build
+  build-and-publish:
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
+    strategy:
+      matrix:
+        node-version: ['18.14.1']
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
           registry-url: https://npm.pkg.github.com/
-          scope: "@ngdem"
+          scope: '@ngdem'
+
       - name: Enable Corepack
         run: corepack enable
+
+      - name: Yarn version
+        run: yarn -v
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
       - name: Build
         run: yarn build
+
       - name: Publish to GitHub Packages
         run: yarn publish
         env:

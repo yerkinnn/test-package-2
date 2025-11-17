@@ -1,6 +1,6 @@
 {
   "name": "@yerkinnn/test-package-2",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.5",
   "description": "NestJS services package for ngdem organization",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -49,24 +49,25 @@
   "peerDependencies": {
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.1",
-    "class-transformer": "0.5.1",
-    "class-validator": "0.14.0",
-    "date-fns": "3.0.6",
-    "date-fns-tz": "3.1.3"
-  },
-  "devDependencies": {
-    "@nestjs/common": "^10.0.0",
-    "@nestjs/core": "^10.0.0",
-    "@types/node": "^20.0.0",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.1",
-    "typescript": "^5.0.0",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "date-fns": "3.0.6",
     "date-fns-tz": "3.1.3",
-    "@faker-js/faker": "8.1.0"
-  }
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "8.1.0",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@types/node": "^20.0.0",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.0",
+    "date-fns": "3.0.6",
+    "date-fns-tz": "3.1.3",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1",
+    "typescript": "^5.0.0"
+  },
+  "packageManager": "yarn@3.4.1"
 }

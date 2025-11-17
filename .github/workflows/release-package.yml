@@ -25,17 +25,17 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@ngdem'
 
-      # - name: Enable Corepack
-      #   run: corepack enable
-
-      - name: Yarn version before disabling Corepack
+      - name: Yarn version
         run: yarn -v
 
-      - name: Disable Corepack
-        run: corepack disable
+      # - name: Yarn version before disabling Corepack
+      #   run: yarn -v
 
-      - name: Yarn version after disabling Corepack
-        run: yarn -v
+      # - name: Disable Corepack
+      #   run: corepack disable
+
+      # - name: Yarn version after disabling Corepack
+      #   run: yarn -v
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -44,6 +44,6 @@ jobs:
         run: yarn build
 
       - name: Publish to GitHub Packages
-        run: yarn npm publish
+        run: yarn npm publish --access=restricted
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

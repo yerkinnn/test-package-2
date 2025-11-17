@@ -68,6 +68,5 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
     "typescript": "^5.0.0"
-  },
-  "packageManager": "yarn@3.4.1"
+  }
 }

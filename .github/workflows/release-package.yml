@@ -28,7 +28,13 @@ jobs:
       # - name: Enable Corepack
       #   run: corepack enable
 
-      - name: Yarn version
+      - name: Yarn version before disabling Corepack
+        run: yarn -v
+
+      - name: Disable Corepack
+        run: corepack disable
+
+      - name: Yarn version after disabling Corepack
         run: yarn -v
 
       - name: Install dependencies
